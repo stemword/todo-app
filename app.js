@@ -4,17 +4,34 @@ const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
-const argv = yargs.argv;
-console.log(argv);
+const titleOptions = {
+  describe: 'Title of note',
+  demand: true,
+  alias: 't'
+};
+const bodyOptions = {
+  describe: 'Body of note',
+  demand: true,
+  alias: 'b'
+};
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: titleOptions,
+    body: bodyOptions
+  })
+  .command('list', 'List all notes')
+  .command('read', 'Read a note', {
+    title: titleOptions,
+  })
+  .command('remove', 'Remove a note', {
+    title: titleOptions
+  })
+  .help()
+  .argv;
 var command = argv._[0];
-// var request = require('request');
-// request('http://www.google.com', function (error, response, body) {
-//   console.log('error:', error); // Print the error if one occurred
-//   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-//   console.log('body:', body); // Print the HTML for the Google homepage.
-// });
-// return false;
+
 if (command === 'add') {
+  console.log(argv);
   var note = notes.addNote(argv.title, argv.body);
   if (note) {
     console.log('Note created');

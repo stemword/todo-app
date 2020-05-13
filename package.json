@@ -1,0 +1,23 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "CRUD of todo notes from json file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stemword/todo-app.git"
+  },
+  "author": "kshitij soni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stemword/todo-app/issues"
+  },
+  "homepage": "https://github.com/stemword/todo-app#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "yargs": "^15.3.1"
+  }
+}
