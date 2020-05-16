@@ -12,6 +12,8 @@ node app add --t=firstnote --b=first note body
 
 Remove note
 node app remove --t=firstnote
+
+If you want get data from mysql database follow this code snippet
 ```
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
